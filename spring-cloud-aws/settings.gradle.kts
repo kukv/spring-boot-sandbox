@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "aws-sdk"
+rootProject.name = "spring-cloud-aws"
 
 include("s3")

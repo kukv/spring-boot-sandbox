@@ -10,4 +10,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "spring-boot-sandbox"
 
-includeBuild("aws-sdk")
+includeBuild("spring-cloud-aws")
