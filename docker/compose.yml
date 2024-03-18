@@ -1,0 +1,18 @@
+services:
+  minio:
+    extends:
+      file: minio/minio.yml
+      service: minio
+    profiles:
+      - default
+      - storage
+      - minio
+  create-bucket:
+    extends:
+      file: minio/minio.yml
+      service: create-bucket
+    profiles:
+      - default
+      - storage
+      - minio
+      - create-bucket
