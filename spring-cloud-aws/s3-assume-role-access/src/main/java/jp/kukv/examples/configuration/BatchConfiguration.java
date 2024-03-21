@@ -1,4 +1,4 @@
-package jp.kukv.examples.config;
+package jp.kukv.examples.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

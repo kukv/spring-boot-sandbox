@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "spring-cloud-aws"
 
-include("s3")
+include("s3-iam-user-access")
+include("s3-assume-role-access")

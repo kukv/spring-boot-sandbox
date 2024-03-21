@@ -1,14 +1,14 @@
-package jp.kukv.examples.config.amazon;
+package jp.kukv.examples.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-class AmazonConfiguration {
+class BatchConfiguration {
 
   @Bean
-  String bucket(@Value("${spring.cloud.aws.s3.bucket:}") String value) {
+  String tmpDir(@Value("${batch.tmp-dir:}") String value) {
     return value;
   }
 }

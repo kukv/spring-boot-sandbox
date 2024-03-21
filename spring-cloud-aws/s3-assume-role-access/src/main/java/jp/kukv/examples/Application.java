@@ -2,8 +2,6 @@ package jp.kukv.examples;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.springframework.boot.ApplicationArguments;
@@ -26,13 +24,9 @@ class Application implements ApplicationRunner {
     File file = amazonS3Client.receive(new ObjectKey("logo.png"));
 
     // アップロード用に別名でコピー
-    LocalDateTime dateTime = LocalDateTime.now();
-    String datetimeString = DateTimeFormatter.ofPattern("yyyyMMddHHmmss").format(dateTime);
-    String fileName = "logo_" + datetimeString + ".png";
-    Path transferPath = Path.of(tmpDir, fileName);
-    Files.copy(file.toPath(), transferPath);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+    ObjectKey objectKey = new ObjectKey("logo_" + formatter.format(LocalDateTime.now()) + ".png");
 
-    ObjectKey objectKey = new ObjectKey(fileName);
     amazonS3Client.transfer(objectKey, file);
   }
 
