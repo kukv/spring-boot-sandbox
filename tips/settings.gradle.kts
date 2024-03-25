@@ -6,9 +6,13 @@ dependencyResolutionManagement {
         gradlePluginPortal()
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
 }
 
-rootProject.name = "spring-boot-sandbox"
+rootProject.name = "tips"
 
-includeBuild("spring-cloud-aws")
-includeBuild("tips")
+include("asynchronous")
