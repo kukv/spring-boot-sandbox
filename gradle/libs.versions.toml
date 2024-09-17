@@ -17,4 +17,4 @@ spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" 
 # AWS
 #########################################
 spring-cloud-aws-starter-s3 = { module = "io.awspring.cloud:spring-cloud-aws-starter-s3", version = { strictly = "3.1.1" } }
-software-amazon-awssdk-sts = { module = "software.amazon.awssdk:sts", version = { strictly = "2.27.16" } }
+software-amazon-awssdk-sts = { module = "software.amazon.awssdk:sts", version = { strictly = "2.28.1" } }
